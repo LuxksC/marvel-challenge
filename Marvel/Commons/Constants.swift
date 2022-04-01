@@ -11,12 +11,12 @@ struct Constants {
 	
 	static let baseURL: String = "https://gateway.marvel.com:443/v1/public/characters"
 	
-	static let publicKey: String = "67b947c15e8825d365e0e9a208c0b32b"
+	static let publicKey: String = "c44a839ba21df1a26000741b0794ae9c"
 	
-	static let privateKey: String = "38cc93ae0e1d6878021c02baa574515815cfd726"
+	static let privateKey: String = "680832f9a6f9d11b68042c7aa13a4922c0b0818b"
 	
-	static let order: String = "Desc"
+	//static let order: String = "Desc"
 	
-	static let token: String = "dsadadrerwfsdfr4rwefsrer"
+	//static let token: String = "dsadadrerwfsdfr4rwefsrer"
 }
 

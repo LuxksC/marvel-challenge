@@ -21,8 +21,8 @@ enum Environment {
 		return Constants.privateKey
 	}
 	
-	static var token: String {
-		return Constants.token
-	}
+//	static var token: String {
+//		return Constants.token
+//	}
 	
 }

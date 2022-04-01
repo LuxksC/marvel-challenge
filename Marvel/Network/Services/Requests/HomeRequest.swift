@@ -22,7 +22,7 @@ enum HomeRequest: URLRequestProtocol {
 		
 		switch self {
 		case .home:
-			return "limit=30&ts=\(timestamp)&apikey=\(Environment.publicKey)&hash=\(hashMD5(timestamp: timestamp))"
+			return "limit=10&ts=\(timestamp)&apikey=\(Environment.publicKey)&hash=\(hashMD5(timestamp: timestamp))"
 		case .details:
 			return "details=423432424"
 		}

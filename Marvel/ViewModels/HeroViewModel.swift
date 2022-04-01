@@ -13,7 +13,7 @@ class HeroViewModel {
 	
 	weak var delegate: HeroViewModelDelegate?
 	
-	var hero: Hero?
+	var heroes: [ResultHero]?
 	
 	init(services: HeroListServiceProtocol) {
 		self.services = services
@@ -33,7 +33,7 @@ class HeroViewModel {
 	}
 	
 	private func sucess(hero: Hero) {
-		self.hero = hero
+		self.heroes = hero.data?.results
 		delegate?.heroFetchWithSucess()
 	}
 	
