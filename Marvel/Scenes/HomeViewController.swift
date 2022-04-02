@@ -135,7 +135,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let hero = viewModel?.heroes?[indexPath.row] else { return }
-        print(hero)
         let detailsViewController: DetailsViewController = DetailsViewController(
             viewModel: DetailsViewModel(hero: hero))
         navigationController?.pushViewController(detailsViewController, animated: true)

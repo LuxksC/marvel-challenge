@@ -36,9 +36,15 @@ class EventsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .red
+        
         configureNavigationBar()
         
         configureTableView()
+        
+        registerCells()
+        
+        print(viewModel.events)
         
     }
     
@@ -60,15 +66,23 @@ class EventsViewController: UIViewController {
             tableview.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
+    
+    private func registerCells() {
+        tableview.register(EventTableViewCell.self, forCellReuseIdentifier: EventTableViewCell.identifier)
+    }
 }
 
 extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel.events.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        guard let cell = tableview.dequeueReusableCell(withIdentifier: EventTableViewCell.identifier, for: indexPath) as? EventTableViewCell else {return UITableViewCell() }
+        
+        let event = viewModel.events[indexPath.row]
+        
+        cell.getCellData(with: event, rowNumber: indexPath.row + 1)
         
         return cell
     }

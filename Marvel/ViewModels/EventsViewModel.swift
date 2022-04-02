@@ -2,5 +2,9 @@ import Foundation
 
 class EventsViewModel {
     
-    var events: [Comics]?
+    private(set) var events: [ComicsItem]
+    
+    init(events: [ComicsItem]) {
+        self.events = events
+    }
 }

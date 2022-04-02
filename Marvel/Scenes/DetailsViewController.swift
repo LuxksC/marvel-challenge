@@ -73,7 +73,10 @@ class DetailsViewController: UIViewController {
     
     @objc
     func listEvents() {
-        
+        print(self.viewModel.hero.events?.items ?? [])
+        let eventsViewController: EventsViewController = EventsViewController(
+            viewModel: EventsViewModel(events: self.viewModel.hero.events?.items ?? []))
+        navigationController?.pushViewController(eventsViewController, animated: true)
     }
     
     func setupConstraints() {
