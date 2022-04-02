@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
         let cardWidth = ( windowWidth - 16 - 32 ) / 2
         
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: cardWidth, height: 200)
+        layout.itemSize = CGSize(width: cardWidth, height: 300)
         layout.minimumInteritemSpacing = 16
         layout.minimumLineSpacing = 16
         layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 0, right: 16)
@@ -96,10 +96,10 @@ class HomeViewController: UIViewController {
         view.addSubview(collectionview)
         
         NSLayoutConstraint.activate([
-            collectionview.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            collectionview.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            collectionview.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            collectionview.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+            collectionview.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionview.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionview.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            collectionview.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
 }
