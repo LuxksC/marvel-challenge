@@ -1,10 +1,3 @@
-//
-//  HomeCollectionViewCell.swift
-//  Marvel
-//
-//  Created by Aloc SP11602 on 01/04/22.
-//
-
 import UIKit
 import Kingfisher
 

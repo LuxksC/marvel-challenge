@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  Marvel
-//
-//  Created by Douglas Nunes on 30/03/22.
-//
-
 import UIKit
 
 @main

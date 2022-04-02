@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  Marvel
-//
-//  Created by Douglas Nunes on 30/03/22.
-//
-
 import UIKit
 
 class HomeViewController: UIViewController {
@@ -40,7 +33,8 @@ class HomeViewController: UIViewController {
         collection.backgroundColor = .red
         collection.translatesAutoresizingMaskIntoConstraints = false
         
-        collection.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collection.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: HomeCollectionViewCell.identifier)
+        
         return collection
     }()
     
@@ -130,13 +124,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell else {return UICollectionViewCell()}
         
-        cell.backgroundColor = .blue
+        guard let hero = viewModel?.heroes?[indexPath.row] else { return UICollectionViewCell() }
         
-        //let hero = viewModel!.heroes![indexPath.row]
-        
-        //cell.setup(hero)
+        cell.getCellData(with: hero)
         
         return cell
     }
