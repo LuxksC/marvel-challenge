@@ -16,6 +16,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
             let label = UILabel()
             label.textColor = .label
             label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+            label.textAlignment = .center
             label.translatesAutoresizingMaskIntoConstraints = false
             return label
         }()

@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.delegate = self
         collection.dataSource = self
-        collection.backgroundColor = .red
+        collection.backgroundColor = .systemBackground
         collection.translatesAutoresizingMaskIntoConstraints = false
         
         collection.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: HomeCollectionViewCell.identifier)
@@ -131,6 +131,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.getCellData(with: hero)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let hero = viewModel?.heroes?[indexPath.row] else { return }
+        print(hero)
+        let detailsViewController: DetailsViewController = DetailsViewController(
+            viewModel: DetailsViewModel(hero: hero))
+        navigationController?.pushViewController(detailsViewController, animated: true)
     }
     
     

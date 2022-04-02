@@ -19,7 +19,7 @@ struct DataClass: Codable {
 struct ResultHero: Codable {
 	let id: Int?
 	let name: String?
-	let resultDescription: String?
+	let description: String?
 	let thumbnail: Thumbnail?
 	let resourceURI: String?
 	let comics: Comics?
@@ -27,7 +27,6 @@ struct ResultHero: Codable {
 	let stories: Stories?
 	let events: Comics?
 	let urls: [URLElement]?
-
 }
 
 // MARK: - Comics
