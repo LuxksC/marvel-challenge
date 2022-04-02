@@ -16,8 +16,11 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .systemBackground
+        
         view.addSubview(thumbnailImageView)
         view.addSubview(nameLabel)
+        view.addSubview(descriptionLabel)
+        view.addSubview(eventsButton)
         
         setupConstraints()
         setupView()
@@ -37,11 +40,7 @@ class DetailsViewController: UIViewController {
     lazy var thumbnailImageView: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-//        image.image = UIImage(systemName: "person.fill")
         image.contentMode = .scaleAspectFit
-//        image.tintColor = .systemGray
-        image.layer.cornerRadius = 10
-//        image.backgroundColor = .cyan
         return image
     }()
     
@@ -49,10 +48,33 @@ class DetailsViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 30, weight: .light)
-        label.textColor = .black
-        label.text = "Hero"
         return label
     }()
+    
+    lazy var descriptionLabel: UILabel = {
+       let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 20, weight: .regular)
+        label.numberOfLines = 0
+        label.textAlignment = .justified
+        return label
+    }()
+    
+    lazy var eventsButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Events", for: .normal)
+        button.tintColor = .white
+        button.backgroundColor = .systemRed
+        button.layer.cornerRadius = 5
+        button.addTarget(self, action: #selector(listEvents), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc
+    func listEvents() {
+        
+    }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
@@ -66,6 +88,19 @@ class DetailsViewController: UIViewController {
             thumbnailImageView.topAnchor.constraint(equalTo: nameLabel.topAnchor, constant: 50),
             thumbnailImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
+        
+        NSLayoutConstraint.activate([
+            descriptionLabel.topAnchor.constraint(equalTo: thumbnailImageView.bottomAnchor, constant: 20),
+            descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            descriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+        ])
+        
+        NSLayoutConstraint.activate([
+            eventsButton.heightAnchor.constraint(equalToConstant: 45),
+            eventsButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            eventsButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            eventsButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+        ])
     }
     
     func setupView() {
@@ -73,5 +108,6 @@ class DetailsViewController: UIViewController {
         
         thumbnailImageView.kf.setImage(with: url)
         nameLabel.text = viewModel.hero.name
+        descriptionLabel.text = viewModel.hero.description
     }
 }
