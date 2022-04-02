@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0573310C27F898AD003D5DF6 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0573310B27F898AD003D5DF6 /* EventsViewController.swift */; };
+		0573310E27F898EC003D5DF6 /* EventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0573310D27F898EC003D5DF6 /* EventsViewModel.swift */; };
 		5178DBD327F7BF4B0004DB6C /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5178DBD227F7BF4B0004DB6C /* HomeCollectionViewCell.swift */; };
 		5178DBD527F877DC0004DB6C /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5178DBD427F877DC0004DB6C /* DetailsViewController.swift */; };
 		5178DBD727F87D9A0004DB6C /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5178DBD627F87D9A0004DB6C /* DetailsViewModel.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0573310B27F898AD003D5DF6 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		0573310D27F898EC003D5DF6 /* EventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel.swift; sourceTree = "<group>"; };
 		45A3C96A22E4442A8AC123FD /* Pods-Marvel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.debug.xcconfig"; path = "Target Support Files/Pods-Marvel/Pods-Marvel.debug.xcconfig"; sourceTree = "<group>"; };
 		5178DBD227F7BF4B0004DB6C /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		5178DBD427F877DC0004DB6C /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +95,7 @@
 				8F0A598127F603E0009820C6 /* HeroViewModelDelegate.swift */,
 				8F0A598527F60AA0009820C6 /* HeroViewModel.swift */,
 				5178DBD627F87D9A0004DB6C /* DetailsViewModel.swift */,
+				0573310D27F898EC003D5DF6 /* EventsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 				5178DBD127F7BF2F0004DB6C /* Cells */,
 				8F13D8A227F51DEA004685DE /* HomeViewController.swift */,
 				5178DBD427F877DC0004DB6C /* DetailsViewController.swift */,
+				0573310B27F898AD003D5DF6 /* EventsViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -307,6 +313,7 @@
 				8F13D8A127F51DEA004685DE /* SceneDelegate.swift in Sources */,
 				8F13D8C227F52637004685DE /* MD5.swift in Sources */,
 				8F13D8C727F529B6004685DE /* Hero.swift in Sources */,
+				0573310E27F898EC003D5DF6 /* EventsViewModel.swift in Sources */,
 				8F0A598627F60AA0009820C6 /* HeroViewModel.swift in Sources */,
 				8F13D8B927F520EB004685DE /* URLRequestProtocol.swift in Sources */,
 				5178DBD727F87D9A0004DB6C /* DetailsViewModel.swift in Sources */,
@@ -315,6 +322,7 @@
 				8F13D8B427F51F46004685DE /* Constants.swift in Sources */,
 				8F13D8BD27F5224F004685DE /* HomeRequest.swift in Sources */,
 				8F13D8C927F52A31004685DE /* HeroListService.swift in Sources */,
+				0573310C27F898AD003D5DF6 /* EventsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
