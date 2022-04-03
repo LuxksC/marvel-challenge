@@ -16,6 +16,8 @@ class HomeViewController: UIViewController {
 	
 	internal var viewModel: HeroViewModel?
     
+    private var loading = UIActivityIndicatorView(style: .large)
+    
     // estilização da collection
     lazy var collectionview: UICollectionView = {
         let windowWidth = view.frame.size.width
@@ -44,6 +46,8 @@ class HomeViewController: UIViewController {
         configNavigation()
         
         configCollection()
+        
+        configLoadingIndicator()
     }
 	
 	override func viewDidLoad() {
@@ -52,9 +56,9 @@ class HomeViewController: UIViewController {
 		viewModel?.delegate = self
 		
 		view.backgroundColor = .systemBackground
-	
+        
 		state = .loading
-		
+        showLoadingIndicator()
 		fetchHero()
 	}
     
@@ -84,6 +88,8 @@ class HomeViewController: UIViewController {
             print("error")
         }
         
+        self.hideLoadingIndicator()
+        
 	}
     
     private func configNavigation() {
@@ -101,6 +107,33 @@ class HomeViewController: UIViewController {
             collectionview.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             collectionview.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
+    }
+    
+    private func configLoadingIndicator() {
+        loading.color = .systemRed
+        loading.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(loading)
+        
+        NSLayoutConstraint.activate([
+            loading.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loading.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+        
+    }
+    
+    private func showLoadingIndicator() {
+        DispatchQueue.main.async {
+            self.loading.startAnimating()
+            self.loading.isHidden = false
+        }
+    }
+    
+    private func hideLoadingIndicator() {
+        DispatchQueue.main.async {
+            self.loading.stopAnimating()
+            self.loading.isHidden = true
+        }
     }
 }
 
