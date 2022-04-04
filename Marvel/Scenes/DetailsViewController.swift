@@ -73,9 +73,8 @@ class DetailsViewController: UIViewController {
     
     @objc
     func listEvents() {
-        print(self.viewModel.hero.events?.items ?? [])
         let eventsViewController: EventsViewController = EventsViewController(
-            viewModel: EventsViewModel(events: self.viewModel.hero.events?.items ?? []))
+            viewModel: EventsViewModel(name: self.viewModel.hero.name ?? "Hero Events", id: self.viewModel.hero.id ?? 0, services: EventsService()))
         navigationController?.pushViewController(eventsViewController, animated: true)
     }
     

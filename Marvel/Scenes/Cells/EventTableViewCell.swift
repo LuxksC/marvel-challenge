@@ -1,11 +1,5 @@
-//
-//  EventTableViewCell.swift
-//  Marvel
-//
-//  Created by Sandra Monteiro de Castro on 02/04/22.
-//
-
 import UIKit
+import Kingfisher
 
 class EventTableViewCell: UITableViewCell {
 
@@ -53,10 +47,11 @@ class EventTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func getCellData(with event: ComicsItem, rowNumber: Int) {
-        //let url = URL(string: "\(hero.thumbnail?.path ?? "").\(hero.thumbnail?.thumbnailExtension ?? "")")
-        //thumbnailImageView.kf.setImage(with: url)
-        eventNameLabel.text = "\(rowNumber)- \(event.name ?? "Evento Desconhecido")"
+    func getCellData(with event: Event, rowNumber: Int) {
+        
+        let url = URL(string: "\(event.thumbnail?.path ?? "").\(event.thumbnail?.thumbnailExtension ?? "")")
+        eventImageView.kf.setImage(with: url)
+        eventNameLabel.text = "\(rowNumber)- \(event.title ?? "Evento Desconhecido")"
     }
 
 }

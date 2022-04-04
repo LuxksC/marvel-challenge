@@ -4,7 +4,21 @@ class EventsViewController: UIViewController {
     
     // MARK: - Private variables
     
+    fileprivate enum ViewState {
+        case loading
+        case normal
+        case error
+    }
+    
+    fileprivate var state: ViewState = .normal {
+        didSet {
+            self.setupView()
+        }
+    }
+    
     private var viewModel: EventsViewModel
+    
+    private var loading = UIActivityIndicatorView(style: .large)
     
     // MARK: - Public Variables
     
@@ -31,6 +45,8 @@ class EventsViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
+        
+        configLoadingIndicator()
     }
     
     override func viewDidLoad() {
@@ -38,20 +54,28 @@ class EventsViewController: UIViewController {
         
         view.backgroundColor = .red
         
+        
         configureNavigationBar()
         
         configureTableView()
         
         registerCells()
         
-        print(viewModel.events)
+        state = .loading
+        showLoadingIndicator()
         
+        fetchEvents()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        fetchEvents()
     }
     
     //MARK: - Private methods
     
     private func configureNavigationBar() {
-        title = "Hero Name"
+        title = viewModel.name
         
         navigationController?.navigationBar.prefersLargeTitles = true
     }
@@ -67,9 +91,73 @@ class EventsViewController: UIViewController {
         ])
     }
     
+    private func configLoadingIndicator() {
+        loading.color = .systemRed
+        loading.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(loading)
+        
+        NSLayoutConstraint.activate([
+            loading.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loading.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+    }
+    
     private func registerCells() {
         tableview.register(EventTableViewCell.self, forCellReuseIdentifier: EventTableViewCell.identifier)
     }
+    
+    private func fetchEvents() {
+        viewModel.fetchEvents()
+    }
+    
+    private func showLoadingIndicator() {
+        DispatchQueue.main.async {
+            self.loading.startAnimating()
+            self.loading.isHidden = false
+        }
+    }
+    
+    private func hideLoadingIndicator() {
+        DispatchQueue.main.async {
+            self.loading.stopAnimating()
+            self.loading.isHidden = true
+        }
+    }
+    
+    private func setupView() {
+        
+        switch state {
+        case .loading:
+            print("loading")
+        case .normal:
+            print("normal")
+            DispatchQueue.main.async {
+                self.tableview.reloadData()
+            }
+        case .error:
+            print("error")
+        }
+        
+        self.hideLoadingIndicator()
+        
+    }
+}
+
+extension EventsViewController: EventsViewModelDelegate {
+    func eventsFetchWithSucess() {
+        state = .normal
+        DispatchQueue.main.async {
+            self.tableview.reloadData()
+        }
+    }
+    
+    func errorToFetchEvents(_ error: String) {
+        print(error)
+        state = .error
+    }
+    
+    
 }
 
 extension EventsViewController: UITableViewDelegate, UITableViewDataSource {

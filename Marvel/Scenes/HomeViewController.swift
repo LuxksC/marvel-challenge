@@ -32,7 +32,7 @@ class HomeViewController: UIViewController {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.delegate = self
         collection.dataSource = self
-        collection.backgroundColor = .systemBackground
+        collection.backgroundColor = UIColor.bg()
         collection.translatesAutoresizingMaskIntoConstraints = false
         
         collection.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: HomeCollectionViewCell.identifier)
@@ -54,8 +54,6 @@ class HomeViewController: UIViewController {
 		super.viewDidLoad()
 		
 		viewModel?.delegate = self
-		
-		view.backgroundColor = .systemBackground
         
 		state = .loading
         showLoadingIndicator()
@@ -96,6 +94,15 @@ class HomeViewController: UIViewController {
         title = "Heroes"
         
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        let appearence = UINavigationBarAppearance()
+        
+        appearence.backgroundColor = UIColor.bg()
+        appearence.titleTextAttributes = [ .foregroundColor: UIColor.title() ]
+        appearence.largeTitleTextAttributes = [ .foregroundColor: UIColor.title()]
+        
+        navigationController?.navigationBar.standardAppearance = appearence
+        navigationController?.navigationBar.scrollEdgeAppearance = appearence
     }
     
     private func configCollection() {
