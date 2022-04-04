@@ -32,7 +32,7 @@ class HomeViewController: UIViewController {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.delegate = self
         collection.dataSource = self
-        collection.backgroundColor = UIColor.bg()
+        collection.backgroundColor = UIColor.bg
         collection.translatesAutoresizingMaskIntoConstraints = false
         
         collection.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: HomeCollectionViewCell.identifier)
@@ -97,9 +97,9 @@ class HomeViewController: UIViewController {
         
         let appearence = UINavigationBarAppearance()
         
-        appearence.backgroundColor = UIColor.bg()
-        appearence.titleTextAttributes = [ .foregroundColor: UIColor.title() ]
-        appearence.largeTitleTextAttributes = [ .foregroundColor: UIColor.title()]
+        appearence.backgroundColor = UIColor.navBarBackground
+        appearence.titleTextAttributes = [ .foregroundColor: UIColor.navBarTitle, .font: UIFont.navBarTitle ]
+        appearence.largeTitleTextAttributes = [ .foregroundColor: UIColor.navBarTitle, .font: UIFont.navBarLargeTitle]
         
         navigationController?.navigationBar.standardAppearance = appearence
         navigationController?.navigationBar.scrollEdgeAppearance = appearence
@@ -168,7 +168,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         guard let hero = viewModel?.heroes?[indexPath.row] else { return UICollectionViewCell() }
         
-        cell.getCellData(with: hero)
+        cell.setCellData(with: hero)
         
         return cell
     }

@@ -7,14 +7,14 @@ class HomeCollectionViewCell: UICollectionViewCell {
 
         lazy var thumbnailImageView: UIImageView = {
             let picture = UIImageView()
-            picture.contentMode = .scaleAspectFit
+            picture.contentMode = .scaleAspectFill
             picture.translatesAutoresizingMaskIntoConstraints = false
             return picture
         }()
         
         lazy var nameLabel: UILabel = {
             let label = UILabel()
-            label.textColor = .label
+            label.textColor = .white
             label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
             label.textAlignment = .center
             label.translatesAutoresizingMaskIntoConstraints = false
@@ -46,9 +46,10 @@ class HomeCollectionViewCell: UICollectionViewCell {
             fatalError("init(coder:) has not been implemented")
         }
         
-        func getCellData(with hero: ResultHero) {
+        func setCellData(with hero: ResultHero) {
             let url = URL(string: "\(hero.thumbnail?.path ?? "").\(hero.thumbnail?.thumbnailExtension ?? "")")
             thumbnailImageView.kf.setImage(with: url)
+            thumbnailImageView.makeRounded()
             nameLabel.text = hero.name
         }
 }

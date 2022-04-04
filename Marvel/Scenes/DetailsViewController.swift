@@ -15,7 +15,7 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .bg
         
         view.addSubview(thumbnailImageView)
         view.addSubview(nameLabel)
@@ -110,6 +110,6 @@ class DetailsViewController: UIViewController {
         
         thumbnailImageView.kf.setImage(with: url)
         nameLabel.text = viewModel.hero.name
-        descriptionLabel.text = viewModel.hero.description
+        descriptionLabel.text = viewModel.hero.description == "" ? "This hero has no description" : viewModel.hero.description
     }
 }
