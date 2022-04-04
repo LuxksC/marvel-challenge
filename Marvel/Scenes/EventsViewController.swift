@@ -16,7 +16,7 @@ class EventsViewController: UIViewController {
         }
     }
     
-    private var viewModel: EventsViewModel
+    internal var viewModel: EventsViewModel
     
     private var loading = UIActivityIndicatorView(style: .large)
     
@@ -28,6 +28,14 @@ class EventsViewController: UIViewController {
         table.dataSource = self
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
+    }()
+    
+    private lazy var emptyMessageLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .secondaryLabel
+        label.text = "Empty Message"
+        label.textAlignment = .center
+        return label
     }()
     
     //MARK: - Initializers
@@ -45,6 +53,11 @@ class EventsViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
+        configureNavigationBar()
+        
+        configureTableView()
+        
+        registerCells()
         
         configLoadingIndicator()
     }
@@ -54,22 +67,13 @@ class EventsViewController: UIViewController {
         
         view.backgroundColor = .red
         
-        
-        configureNavigationBar()
-        
-        configureTableView()
-        
-        registerCells()
-        
+        viewModel.delegate = self
+
         state = .loading
         showLoadingIndicator()
         
         fetchEvents()
         
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        fetchEvents()
     }
     
     //MARK: - Private methods
@@ -134,6 +138,10 @@ class EventsViewController: UIViewController {
             print("normal")
             DispatchQueue.main.async {
                 self.tableview.reloadData()
+                if self.viewModel.events.count == 0 {
+                    self.emptyMessageLabel.text = "No events registred"
+                    self.tableview.backgroundView = self.emptyMessageLabel
+                }
             }
         case .error:
             print("error")
@@ -147,9 +155,6 @@ class EventsViewController: UIViewController {
 extension EventsViewController: EventsViewModelDelegate {
     func eventsFetchWithSucess() {
         state = .normal
-        DispatchQueue.main.async {
-            self.tableview.reloadData()
-        }
     }
     
     func errorToFetchEvents(_ error: String) {
