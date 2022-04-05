@@ -1,6 +1,6 @@
 import UIKit
 
-class HomeViewController: UIViewController {
+class HeroesViewController: UIViewController {
 
 	fileprivate enum ViewState {
 	  case loading
@@ -134,7 +134,7 @@ class HomeViewController: UIViewController {
     }
 }
 
-extension HomeViewController: HeroViewModelDelegate {
+extension HeroesViewController: HeroViewModelDelegate {
 	func heroFetchWithSucess() {
 		state = .normal
 	}
@@ -148,7 +148,7 @@ extension HomeViewController: HeroViewModelDelegate {
 	
 }
 
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HeroesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.heroes?.count ?? 0
     }

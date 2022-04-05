@@ -34,6 +34,7 @@ class EventsViewController: UIViewController {
     private lazy var emptyMessageLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor.text
+        label.font = UIFont.systemFont(ofSize: 20)
         label.text = "Empty Message"
         label.textAlignment = .center
         return label

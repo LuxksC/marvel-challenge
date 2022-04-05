@@ -14,7 +14,7 @@ final class HomeCoordinator: Coordinator {
     func start() {
         let viewModel = HeroViewModel(services: HeroListService(), coordinator: self)
         
-        let viewController = HomeViewController(viewModel: viewModel)
+        let viewController = HeroesViewController(viewModel: viewModel)
         
         viewController.title = "Heroes"
         
