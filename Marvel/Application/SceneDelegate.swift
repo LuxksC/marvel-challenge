@@ -7,18 +7,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 	func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 		
-		guard let windowScene = (scene as? UIWindowScene) else { return }
-		
-		window = UIWindow(windowScene: windowScene)
-		
-		let service = HeroListService()
-		let viewModel = HeroViewModel(services: service)
-		let heroViewController = HomeViewController()
-		
-		heroViewController.viewModel = viewModel
-		window?.rootViewController = UINavigationController(rootViewController: heroViewController)
-		
-		window?.makeKeyAndVisible()
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene = windowScene
+        
+        let navigationController = UINavigationController()
+        let appCoordinator = AppCoordinator(rootViewController: navigationController)
+        
+        appCoordinator.start()
+
+        window?.rootViewController = appCoordinator.rootViewController
+        
+        window?.makeKeyAndVisible()
 	}
 
 	func sceneDidDisconnect(_ scene: UIScene) {

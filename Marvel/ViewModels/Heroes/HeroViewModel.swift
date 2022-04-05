@@ -6,10 +6,13 @@ class HeroViewModel {
 	
 	weak var delegate: HeroViewModelDelegate?
 	
-	var heroes: [ResultHero]?
+	var heroes: [Hero]?
+    
+    var coordinator: HomeCoordinator
 	
-	init(services: HeroListServiceProtocol) {
+    init(services: HeroListServiceProtocol, coordinator: HomeCoordinator) {
 		self.services = services
+        self.coordinator = coordinator
 	}
 	
 	func fetchHero() {
@@ -17,16 +20,20 @@ class HeroViewModel {
 		services.execute { result in
 			
 			switch result {
-			case .success(let hero):
-				self.sucess(hero: hero)
+			case .success(let response):
+				self.sucess(response: response)
 			case .failure(let error):
 				self.error(error: error.localizedDescription)
 			}
 		}
 	}
 	
-	private func sucess(hero: Hero) {
-		self.heroes = hero.data?.results
+    func didSelectHero(hero: Hero) {
+        coordinator.pushHeroDetailsViewController(hero: hero)
+    }
+    
+    private func sucess(response: Response) {
+        self.heroes = response.data?.results
 		delegate?.heroFetchWithSucess()
 	}
 	

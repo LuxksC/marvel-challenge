@@ -10,12 +10,16 @@
 		0573310C27F898AD003D5DF6 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0573310B27F898AD003D5DF6 /* EventsViewController.swift */; };
 		0573310E27F898EC003D5DF6 /* EventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0573310D27F898EC003D5DF6 /* EventsViewModel.swift */; };
 		0573311027F8A153003D5DF6 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0573310F27F8A152003D5DF6 /* EventTableViewCell.swift */; };
-		057ABAF427FA7E1000C6B86E /* UIColor+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057ABAF327FA7E1000C6B86E /* UIColor+extensions.swift */; };
+		057ABAF427FA7E1000C6B86E /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057ABAF327FA7E1000C6B86E /* UIColor+Extensions.swift */; };
 		057ABAFD27FB4E6D00C6B86E /* EventsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057ABAFC27FB4E6D00C6B86E /* EventsRequest.swift */; };
 		057ABAFF27FB4F8B00C6B86E /* EventsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057ABAFE27FB4F8B00C6B86E /* EventsProtocol.swift */; };
 		057ABB0127FB50AC00C6B86E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057ABB0027FB50AC00C6B86E /* Event.swift */; };
 		057ABB0327FB542200C6B86E /* EventsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057ABB0227FB542200C6B86E /* EventsService.swift */; };
 		057ABB0527FB67FA00C6B86E /* EventsViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057ABB0427FB67FA00C6B86E /* EventsViewModelDelegate.swift */; };
+		5130086D27FCA0D7007A7524 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5130086C27FCA0D7007A7524 /* Coordinator.swift */; };
+		5130086F27FCA3BD007A7524 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5130086E27FCA3BD007A7524 /* AppCoordinator.swift */; };
+		5130087127FCA5EB007A7524 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5130087027FCA5EB007A7524 /* HomeCoordinator.swift */; };
+		5130087327FCCC57007A7524 /* DetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5130087227FCCC57007A7524 /* DetailsCoordinator.swift */; };
 		516BC22427FB74B30093AB67 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516BC22327FB74B30093AB67 /* UIImageView+Extensions.swift */; };
 		5178DBD327F7BF4B0004DB6C /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5178DBD227F7BF4B0004DB6C /* HomeCollectionViewCell.swift */; };
 		5178DBD527F877DC0004DB6C /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5178DBD427F877DC0004DB6C /* DetailsViewController.swift */; };
@@ -44,13 +48,17 @@
 		0573310B27F898AD003D5DF6 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		0573310D27F898EC003D5DF6 /* EventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel.swift; sourceTree = "<group>"; };
 		0573310F27F8A152003D5DF6 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
-		057ABAF327FA7E1000C6B86E /* UIColor+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extensions.swift"; sourceTree = "<group>"; };
+		057ABAF327FA7E1000C6B86E /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		057ABAFC27FB4E6D00C6B86E /* EventsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsRequest.swift; sourceTree = "<group>"; };
 		057ABAFE27FB4F8B00C6B86E /* EventsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsProtocol.swift; sourceTree = "<group>"; };
 		057ABB0027FB50AC00C6B86E /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		057ABB0227FB542200C6B86E /* EventsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsService.swift; sourceTree = "<group>"; };
 		057ABB0427FB67FA00C6B86E /* EventsViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModelDelegate.swift; sourceTree = "<group>"; };
 		45A3C96A22E4442A8AC123FD /* Pods-Marvel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.debug.xcconfig"; path = "Target Support Files/Pods-Marvel/Pods-Marvel.debug.xcconfig"; sourceTree = "<group>"; };
+		5130086C27FCA0D7007A7524 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		5130086E27FCA3BD007A7524 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		5130087027FCA5EB007A7524 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		5130087227FCCC57007A7524 /* DetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCoordinator.swift; sourceTree = "<group>"; };
 		516BC22327FB74B30093AB67 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		5178DBD227F7BF4B0004DB6C /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		5178DBD427F877DC0004DB6C /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -102,9 +110,7 @@
 		057ABAF227FA7DE300C6B86E /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
-				057ABAF327FA7E1000C6B86E /* UIColor+extensions.swift */,
-				516BC22327FB74B30093AB67 /* UIImageView+Extensions.swift */,
-				51FDFEBB27FB8B790035D8BF /* UIFont+Extensions.swift */,
+				5130086A27FC9FBB007A7524 /* Extensions */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -159,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				8F13D8A227F51DEA004685DE /* HomeViewController.swift */,
+				5130087027FCA5EB007A7524 /* HomeCoordinator.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -167,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				5178DBD427F877DC0004DB6C /* DetailsViewController.swift */,
+				5130087227FCCC57007A7524 /* DetailsCoordinator.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -177,6 +185,24 @@
 				0573310B27F898AD003D5DF6 /* EventsViewController.swift */,
 			);
 			path = Events;
+			sourceTree = "<group>";
+		};
+		5130086A27FC9FBB007A7524 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				51FDFEBB27FB8B790035D8BF /* UIFont+Extensions.swift */,
+				516BC22327FB74B30093AB67 /* UIImageView+Extensions.swift */,
+				057ABAF327FA7E1000C6B86E /* UIColor+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5130086B27FCA0BF007A7524 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				5130086C27FCA0D7007A7524 /* Coordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		5178DBD127F7BF2F0004DB6C /* Cells */ = {
@@ -219,6 +245,7 @@
 		8F13D89D27F51DEA004685DE /* Marvel */ = {
 			isa = PBXGroup;
 			children = (
+				5130086B27FCA0BF007A7524 /* Coordinator */,
 				057ABAF227FA7DE300C6B86E /* DesignSystem */,
 				8F0A598027F603BF009820C6 /* ViewModels */,
 				8F13D8CA27F52D6F004685DE /* Scenes */,
@@ -275,6 +302,7 @@
 				8F13D89E27F51DEA004685DE /* AppDelegate.swift */,
 				8F13D8A027F51DEA004685DE /* SceneDelegate.swift */,
 				8F13D8BF27F523B3004685DE /* Environment.swift */,
+				5130086E27FCA3BD007A7524 /* AppCoordinator.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -415,20 +443,24 @@
 				5178DBD327F7BF4B0004DB6C /* HomeCollectionViewCell.swift in Sources */,
 				8F13D8A127F51DEA004685DE /* SceneDelegate.swift in Sources */,
 				8F13D8C227F52637004685DE /* MD5.swift in Sources */,
+				5130086F27FCA3BD007A7524 /* AppCoordinator.swift in Sources */,
 				0573311027F8A153003D5DF6 /* EventTableViewCell.swift in Sources */,
 				8F13D8C727F529B6004685DE /* Hero.swift in Sources */,
 				0573310E27F898EC003D5DF6 /* EventsViewModel.swift in Sources */,
 				8F0A598627F60AA0009820C6 /* HeroViewModel.swift in Sources */,
 				8F13D8B927F520EB004685DE /* URLRequestProtocol.swift in Sources */,
 				5178DBD727F87D9A0004DB6C /* DetailsViewModel.swift in Sources */,
-				057ABAF427FA7E1000C6B86E /* UIColor+extensions.swift in Sources */,
+				5130086D27FCA0D7007A7524 /* Coordinator.swift in Sources */,
+				057ABAF427FA7E1000C6B86E /* UIColor+Extensions.swift in Sources */,
 				057ABB0127FB50AC00C6B86E /* Event.swift in Sources */,
 				057ABB0527FB67FA00C6B86E /* EventsViewModelDelegate.swift in Sources */,
 				5178DBD527F877DC0004DB6C /* DetailsViewController.swift in Sources */,
 				8F13D8C427F52883004685DE /* HeroListServiceProtocol.swift in Sources */,
 				8F13D8B427F51F46004685DE /* Constants.swift in Sources */,
 				8F13D8BD27F5224F004685DE /* HomeRequest.swift in Sources */,
+				5130087127FCA5EB007A7524 /* HomeCoordinator.swift in Sources */,
 				8F13D8C927F52A31004685DE /* HeroListService.swift in Sources */,
+				5130087327FCCC57007A7524 /* DetailsCoordinator.swift in Sources */,
 				0573310C27F898AD003D5DF6 /* EventsViewController.swift in Sources */,
 				057ABAFF27FB4F8B00C6B86E /* EventsProtocol.swift in Sources */,
 			);

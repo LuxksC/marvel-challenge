@@ -9,6 +9,6 @@ enum HeroError: Error {
 
 protocol HeroListServiceProtocol: AnyObject {
 	
-	func execute(handler: @escaping(Result<Hero, HeroError>) -> Void)
+	func execute(handler: @escaping(Result<Response, HeroError>) -> Void)
 	
 }

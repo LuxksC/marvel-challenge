@@ -47,7 +47,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
             fatalError("init(coder:) has not been implemented")
         }
         
-        func setCellData(with hero: ResultHero) {
+        func setCellData(with hero: Hero) {
             let url = URL(string: "\(hero.thumbnail?.path ?? "").\(hero.thumbnail?.thumbnailExtension ?? "")")
             thumbnailImageView.kf.setImage(with: url)
             nameLabel.text = hero.name

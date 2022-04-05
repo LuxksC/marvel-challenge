@@ -1,11 +1,16 @@
 
 class DetailsViewModel {
     
-    private(set) var hero: ResultHero
+    private(set) var hero: Hero
     
-    init(hero: ResultHero) {
+    var coordinator: DetailsCoordinator
+    
+    init(hero: Hero, coordinator: DetailsCoordinator) {
         self.hero = hero
+        self.coordinator = coordinator
     }
     
-    
+    func listEvents() {
+        coordinator.pushEventsViewController(hero: hero)
+    }
 }

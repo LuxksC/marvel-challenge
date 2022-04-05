@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
 	  }
 	}
 	
-	internal var viewModel: HeroViewModel?
+	internal var viewModel: HeroViewModel
     
     private var loading = UIActivityIndicatorView(style: .large)
     
@@ -40,6 +40,15 @@ class HomeViewController: UIViewController {
         return collection
     }()
     
+    init (viewModel: HeroViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func loadView() {
         super.loadView()
         
@@ -53,7 +62,7 @@ class HomeViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		viewModel?.delegate = self
+		viewModel.delegate = self
         
 		state = .loading
         showLoadingIndicator()
@@ -63,7 +72,7 @@ class HomeViewController: UIViewController {
     // MARK: - Private methods
 	
 	private func fetchHero() {
-		viewModel?.fetchHero()
+		viewModel.fetchHero()
 	}
 	
 	private func setupView() {
@@ -154,13 +163,13 @@ extension HomeViewController: HeroViewModelDelegate {
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel!.heroes?.count ?? 0
+        return viewModel.heroes?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell else {return UICollectionViewCell()}
         
-        guard let hero = viewModel?.heroes?[indexPath.row] else { return UICollectionViewCell() }
+        guard let hero = viewModel.heroes?[indexPath.row] else { return UICollectionViewCell() }
         
         cell.setCellData(with: hero)
         
@@ -168,10 +177,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let hero = viewModel?.heroes?[indexPath.row] else { return }
-        let detailsViewController: DetailsViewController = DetailsViewController(
-            viewModel: DetailsViewModel(hero: hero))
-        navigationController?.pushViewController(detailsViewController, animated: true)
+        guard let hero = viewModel.heroes?[indexPath.row] else { return }
+        viewModel.didSelectHero(hero: hero)
     }
     
     

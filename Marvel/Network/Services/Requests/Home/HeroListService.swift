@@ -4,7 +4,7 @@ class HeroListService: HeroListServiceProtocol {
 	
 	let session = URLSession.shared
 	
-	func execute(handler: @escaping (Result<Hero, HeroError>) -> Void) {
+	func execute(handler: @escaping (Result<Response, HeroError>) -> Void) {
 		
 		let request: HomeRequest = .home
 		
@@ -29,7 +29,7 @@ class HeroListService: HeroListServiceProtocol {
 						
 						let decoder = JSONDecoder()
 						
-						let responseData = try decoder.decode(Hero.self, from: jsonData)
+						let responseData = try decoder.decode(Response.self, from: jsonData)
 						
 						handler(.success(responseData))
 						
