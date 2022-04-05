@@ -24,7 +24,7 @@ class HomeViewController: UIViewController {
         let cardWidth = ( windowWidth - 16 - 32 ) / 2
         
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: cardWidth, height: 300)
+        layout.itemSize = CGSize(width: cardWidth, height: 280)
         layout.minimumInteritemSpacing = 16
         layout.minimumLineSpacing = 16
         layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 0, right: 16)
@@ -51,8 +51,6 @@ class HomeViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        
-        configNavigation()
         
         configCollection()
         
@@ -92,21 +90,6 @@ class HomeViewController: UIViewController {
         self.hideLoadingIndicator()
         
 	}
-    
-    private func configNavigation() {
-        title = "Heroes"
-        
-        navigationController?.navigationBar.prefersLargeTitles = true
-        
-        let appearence = UINavigationBarAppearance()
-        
-        appearence.backgroundColor = UIColor.navBarBackground
-        appearence.titleTextAttributes = [ .foregroundColor: UIColor.navBarTitle, .font: UIFont.navBarTitle ]
-        appearence.largeTitleTextAttributes = [ .foregroundColor: UIColor.navBarTitle, .font: UIFont.navBarLargeTitle]
-        
-        navigationController?.navigationBar.standardAppearance = appearence
-        navigationController?.navigationBar.scrollEdgeAppearance = appearence
-    }
     
     private func configCollection() {
         view.addSubview(collectionview)

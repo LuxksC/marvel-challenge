@@ -18,6 +18,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
             label.textColor = UIColor.text
             label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
             label.textAlignment = .center
+            label.numberOfLines = 0
             label.translatesAutoresizingMaskIntoConstraints = false
             return label
         }()

@@ -80,7 +80,7 @@ class EventsViewController: UIViewController {
     private func configureNavigationBar() {
         title = viewModel.name
         
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .always
     }
     
     private func configureTableView() {
