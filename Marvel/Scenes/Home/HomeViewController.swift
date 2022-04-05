@@ -73,12 +73,6 @@ class HomeViewController: UIViewController {
             print("loading")
         case .normal:
             print("normal")
-// -------- API REFERENCES --------------
-//            for item in viewModel!.heroes ?? [] {
-//                print(item.name!)
-//                print("\(item.thumbnail?.path ?? "").\(item.thumbnail?.thumbnailExtension ?? "")")
-//            }
-// -------- API REFERENCES --------------
             DispatchQueue.main.async {
                 self.collectionview.reloadData()
             }

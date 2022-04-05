@@ -15,8 +15,8 @@ class EventTableViewCell: UITableViewCell {
     
     lazy var eventNameLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .label
-        label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        label.textColor = UIColor.text
+        label.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -24,11 +24,12 @@ class EventTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
         addSubview(eventImageView)
         
         NSLayoutConstraint.activate([
-            eventImageView.widthAnchor.constraint(equalToConstant: 140),
-            eventImageView.heightAnchor.constraint(equalToConstant: 140),
+            eventImageView.widthAnchor.constraint(equalToConstant: 250),
+            eventImageView.heightAnchor.constraint(equalToConstant: 250),
             eventImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
             eventImageView.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
@@ -47,11 +48,11 @@ class EventTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func getCellData(with event: Event, rowNumber: Int) {
+    func getCellData(with event: Event) {
         
         let url = URL(string: "\(event.thumbnail?.path ?? "").\(event.thumbnail?.thumbnailExtension ?? "")")
         eventImageView.kf.setImage(with: url)
-        eventNameLabel.text = "\(rowNumber)- \(event.title ?? "Evento Desconhecido")"
+        eventNameLabel.text = "\(event.title ?? "Evento Desconhecido")"
     }
 
 }

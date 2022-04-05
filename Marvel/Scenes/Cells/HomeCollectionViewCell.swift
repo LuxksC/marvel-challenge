@@ -9,12 +9,13 @@ class HomeCollectionViewCell: UICollectionViewCell {
             let picture = UIImageView()
             picture.contentMode = .scaleAspectFill
             picture.translatesAutoresizingMaskIntoConstraints = false
+            picture.makeRounded()
             return picture
         }()
         
         lazy var nameLabel: UILabel = {
             let label = UILabel()
-            label.textColor = .white
+            label.textColor = UIColor.text
             label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
             label.textAlignment = .center
             label.translatesAutoresizingMaskIntoConstraints = false
@@ -49,7 +50,6 @@ class HomeCollectionViewCell: UICollectionViewCell {
         func setCellData(with hero: ResultHero) {
             let url = URL(string: "\(hero.thumbnail?.path ?? "").\(hero.thumbnail?.thumbnailExtension ?? "")")
             thumbnailImageView.kf.setImage(with: url)
-            thumbnailImageView.makeRounded()
             nameLabel.text = hero.name
         }
 }

@@ -26,6 +26,7 @@ class EventsViewController: UIViewController {
         let table = UITableView(frame: .zero, style: .plain)
         table.delegate = self
         table.dataSource = self
+        table.backgroundColor = UIColor.bg
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
@@ -64,8 +65,6 @@ class EventsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .red
         
         viewModel.delegate = self
 
@@ -175,7 +174,9 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
         
         let event = viewModel.events[indexPath.row]
         
-        cell.getCellData(with: event, rowNumber: indexPath.row + 1)
+        cell.backgroundColor = UIColor.bg
+        
+        cell.getCellData(with: event)
         
         return cell
     }

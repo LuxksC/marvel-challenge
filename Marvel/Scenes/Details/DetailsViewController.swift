@@ -8,7 +8,7 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
-
+    
     static let identifier: String = "DetailsViewController"
     
     private var viewModel: DetailsViewModel
@@ -41,22 +41,25 @@ class DetailsViewController: UIViewController {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFit
+        image.makeRounded()
         return image
     }()
     
     lazy var nameLabel: UILabel = {
         let label = UILabel()
+        label.textColor = UIColor.text
+        label.font = UIFont.systemFont(ofSize: 30, weight: .semibold)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 30, weight: .light)
         return label
     }()
     
     lazy var descriptionLabel: UILabel = {
-       let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
+        let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 20, weight: .regular)
         label.numberOfLines = 0
         label.textAlignment = .justified
+        label.textColor = UIColor.text
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -80,7 +83,7 @@ class DetailsViewController: UIViewController {
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            nameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         

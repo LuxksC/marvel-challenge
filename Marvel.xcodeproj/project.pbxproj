@@ -99,14 +99,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		057ABAF227FA7DE300C6B86E /* Extensions */ = {
+		057ABAF227FA7DE300C6B86E /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
 				057ABAF327FA7E1000C6B86E /* UIColor+extensions.swift */,
 				516BC22327FB74B30093AB67 /* UIImageView+Extensions.swift */,
 				51FDFEBB27FB8B790035D8BF /* UIFont+Extensions.swift */,
 			);
-			path = Extensions;
+			path = DesignSystem;
 			sourceTree = "<group>";
 		};
 		057ABAFA27FB4AC100C6B86E /* Home */ = {
@@ -129,6 +129,56 @@
 			path = Events;
 			sourceTree = "<group>";
 		};
+		057ABB3427FBB33300C6B86E /* Heroes */ = {
+			isa = PBXGroup;
+			children = (
+				8F0A598127F603E0009820C6 /* HeroViewModelDelegate.swift */,
+				8F0A598527F60AA0009820C6 /* HeroViewModel.swift */,
+			);
+			path = Heroes;
+			sourceTree = "<group>";
+		};
+		057ABB3527FBB35D00C6B86E /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				5178DBD627F87D9A0004DB6C /* DetailsViewModel.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		057ABB3627FBB3E600C6B86E /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				057ABB0427FB67FA00C6B86E /* EventsViewModelDelegate.swift */,
+				0573310D27F898EC003D5DF6 /* EventsViewModel.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		057ABB3727FBB44B00C6B86E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8F13D8A227F51DEA004685DE /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		057ABB3827FBB45900C6B86E /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				5178DBD427F877DC0004DB6C /* DetailsViewController.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		057ABB3927FBB46600C6B86E /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				0573310B27F898AD003D5DF6 /* EventsViewController.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
 		5178DBD127F7BF2F0004DB6C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,11 +191,9 @@
 		8F0A598027F603BF009820C6 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				8F0A598127F603E0009820C6 /* HeroViewModelDelegate.swift */,
-				8F0A598527F60AA0009820C6 /* HeroViewModel.swift */,
-				5178DBD627F87D9A0004DB6C /* DetailsViewModel.swift */,
-				057ABB0427FB67FA00C6B86E /* EventsViewModelDelegate.swift */,
-				0573310D27F898EC003D5DF6 /* EventsViewModel.swift */,
+				057ABB3427FBB33300C6B86E /* Heroes */,
+				057ABB3527FBB35D00C6B86E /* Details */,
+				057ABB3627FBB3E600C6B86E /* Events */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -171,7 +219,7 @@
 		8F13D89D27F51DEA004685DE /* Marvel */ = {
 			isa = PBXGroup;
 			children = (
-				057ABAF227FA7DE300C6B86E /* Extensions */,
+				057ABAF227FA7DE300C6B86E /* DesignSystem */,
 				8F0A598027F603BF009820C6 /* ViewModels */,
 				8F13D8CA27F52D6F004685DE /* Scenes */,
 				8F13D8C527F529AD004685DE /* Models */,
@@ -244,9 +292,9 @@
 			isa = PBXGroup;
 			children = (
 				5178DBD127F7BF2F0004DB6C /* Cells */,
-				8F13D8A227F51DEA004685DE /* HomeViewController.swift */,
-				5178DBD427F877DC0004DB6C /* DetailsViewController.swift */,
-				0573310B27F898AD003D5DF6 /* EventsViewController.swift */,
+				057ABB3727FBB44B00C6B86E /* Home */,
+				057ABB3827FBB45900C6B86E /* Details */,
+				057ABB3927FBB46600C6B86E /* Events */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";

@@ -31,7 +31,6 @@ class EventsViewModel {
     
     private func sucess(events: Events) {
         self.events = events.data.results
-        print("viewModel: \(self.events)")
         delegate?.eventsFetchWithSucess()
     }
     
