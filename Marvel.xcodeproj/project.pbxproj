@@ -16,6 +16,8 @@
 		057ABB0127FB50AC00C6B86E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057ABB0027FB50AC00C6B86E /* Event.swift */; };
 		057ABB0327FB542200C6B86E /* EventsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057ABB0227FB542200C6B86E /* EventsService.swift */; };
 		057ABB0527FB67FA00C6B86E /* EventsViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057ABB0427FB67FA00C6B86E /* EventsViewModelDelegate.swift */; };
+		05A8509327FCF1E50070FB5C /* DefaultNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A8509227FCF1E50070FB5C /* DefaultNavigationController.swift */; };
+		05A8509527FD01A00070FB5C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A8509427FD01A00070FB5C /* NetworkManager.swift */; };
 		5130086D27FCA0D7007A7524 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5130086C27FCA0D7007A7524 /* Coordinator.swift */; };
 		5130086F27FCA3BD007A7524 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5130086E27FCA3BD007A7524 /* AppCoordinator.swift */; };
 		5130087127FCA5EB007A7524 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5130087027FCA5EB007A7524 /* HomeCoordinator.swift */; };
@@ -54,6 +56,8 @@
 		057ABB0027FB50AC00C6B86E /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		057ABB0227FB542200C6B86E /* EventsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsService.swift; sourceTree = "<group>"; };
 		057ABB0427FB67FA00C6B86E /* EventsViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModelDelegate.swift; sourceTree = "<group>"; };
+		05A8509227FCF1E50070FB5C /* DefaultNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNavigationController.swift; sourceTree = "<group>"; };
+		05A8509427FD01A00070FB5C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		45A3C96A22E4442A8AC123FD /* Pods-Marvel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.debug.xcconfig"; path = "Target Support Files/Pods-Marvel/Pods-Marvel.debug.xcconfig"; sourceTree = "<group>"; };
 		5130086C27FCA0D7007A7524 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		5130086E27FCA3BD007A7524 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				5130086A27FC9FBB007A7524 /* Extensions */,
+				05A8509227FCF1E50070FB5C /* DefaultNavigationController.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -288,10 +293,11 @@
 		8F13D8B727F520C4004685DE /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				8F13D8B827F520EB004685DE /* URLRequestProtocol.swift */,
-				8F13D8BA27F52160004685DE /* HTTPMethod.swift */,
 				057ABAFA27FB4AC100C6B86E /* Home */,
 				057ABAFB27FB4AD400C6B86E /* Events */,
+				8F13D8B827F520EB004685DE /* URLRequestProtocol.swift */,
+				8F13D8BA27F52160004685DE /* HTTPMethod.swift */,
+				05A8509427FD01A00070FB5C /* NetworkManager.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -441,6 +447,7 @@
 				057ABAFD27FB4E6D00C6B86E /* EventsRequest.swift in Sources */,
 				8F0A598227F603E0009820C6 /* HeroViewModelDelegate.swift in Sources */,
 				5178DBD327F7BF4B0004DB6C /* HomeCollectionViewCell.swift in Sources */,
+				05A8509527FD01A00070FB5C /* NetworkManager.swift in Sources */,
 				8F13D8A127F51DEA004685DE /* SceneDelegate.swift in Sources */,
 				8F13D8C227F52637004685DE /* MD5.swift in Sources */,
 				5130086F27FCA3BD007A7524 /* AppCoordinator.swift in Sources */,
@@ -459,6 +466,7 @@
 				8F13D8B427F51F46004685DE /* Constants.swift in Sources */,
 				8F13D8BD27F5224F004685DE /* HomeRequest.swift in Sources */,
 				5130087127FCA5EB007A7524 /* HomeCoordinator.swift in Sources */,
+				05A8509327FCF1E50070FB5C /* DefaultNavigationController.swift in Sources */,
 				8F13D8C927F52A31004685DE /* HeroListService.swift in Sources */,
 				5130087327FCCC57007A7524 /* DetailsCoordinator.swift in Sources */,
 				0573310C27F898AD003D5DF6 /* EventsViewController.swift in Sources */,

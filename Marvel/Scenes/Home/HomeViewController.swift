@@ -95,17 +95,6 @@ class HomeViewController: UIViewController {
     
     private func configNavigation() {
         title = "Heroes"
-        
-        navigationController?.navigationBar.prefersLargeTitles = true
-        
-        let appearence = UINavigationBarAppearance()
-        
-        appearence.backgroundColor = UIColor.navBarBackground
-        appearence.titleTextAttributes = [ .foregroundColor: UIColor.navBarTitle, .font: UIFont.navBarTitle ]
-        appearence.largeTitleTextAttributes = [ .foregroundColor: UIColor.navBarTitle, .font: UIFont.navBarLargeTitle]
-        
-        navigationController?.navigationBar.standardAppearance = appearence
-        navigationController?.navigationBar.scrollEdgeAppearance = appearence
     }
     
     private func configCollection() {

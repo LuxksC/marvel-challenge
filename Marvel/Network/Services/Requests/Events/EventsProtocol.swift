@@ -9,6 +9,6 @@ enum EventsError: Error {
 
 protocol EventsServiceProtocol: AnyObject {
     
-    func fetchEvents(heroId: Int, handler: @escaping(Result<Events, EventsError>) -> Void)
+    func fetchEvents(heroId: Int, completion: @escaping(Result<Events, EventsError>) -> Void)
     
 }

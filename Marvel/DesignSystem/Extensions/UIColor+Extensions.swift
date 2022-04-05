@@ -6,7 +6,7 @@ extension UIColor {
     static let navBarTitle: UIColor = UIColor.white
     
     ///Color for navigation buttons
-    static let navBarButton: UIColor = UIColor.white
+    static let navBarTint: UIColor = UIColor.white
     
     ///Color for navigation bar background
     static let navBarBackground: UIColor = UIColor(red: 0.94, green: 0.07, blue: 0.11, alpha: 1.0)

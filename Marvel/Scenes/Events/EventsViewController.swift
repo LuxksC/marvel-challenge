@@ -176,6 +176,8 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.backgroundColor = UIColor.bg
         
+        cell.widthAnchor.constraint(equalToConstant: view.frame.size.width).isActive = true
+        
         cell.getCellData(with: event)
         
         return cell

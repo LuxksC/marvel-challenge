@@ -13,6 +13,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         
         let navigationController = UINavigationController()
+        
+        //---- navigation config ------
+        navigationController.navigationBar.prefersLargeTitles = true
+        
+        navigationController.navigationBar.tintColor = UIColor.navBarTint
+        
+        let appearence = UINavigationBarAppearance()
+        appearence.backgroundColor = UIColor.navBarBackground
+        appearence.titleTextAttributes = [ .foregroundColor: UIColor.navBarTitle, .font: UIFont.navBarTitle ]
+        appearence.largeTitleTextAttributes = [ .foregroundColor: UIColor.navBarTitle, .font: UIFont.navBarLargeTitle]
+        
+        navigationController.navigationBar.standardAppearance = appearence
+        navigationController.navigationBar.scrollEdgeAppearance = appearence
+        //---- navigation config ------
+        
         let appCoordinator = AppCoordinator(rootViewController: navigationController)
         
         appCoordinator.start()
