@@ -16,6 +16,8 @@ final class HomeCoordinator: Coordinator {
         
         let viewController = HomeViewController(viewModel: viewModel)
         
+        viewController.title = "Heroes"
+        
         rootViewController.setViewControllers([viewController], animated: false)
     }
     

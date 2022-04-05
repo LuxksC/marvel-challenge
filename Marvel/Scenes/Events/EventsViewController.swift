@@ -33,7 +33,7 @@ class EventsViewController: UIViewController {
     
     private lazy var emptyMessageLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .secondaryLabel
+        label.textColor = UIColor.text
         label.text = "Empty Message"
         label.textAlignment = .center
         return label
@@ -80,7 +80,7 @@ class EventsViewController: UIViewController {
     private func configureNavigationBar() {
         title = viewModel.name
         
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .always
     }
     
     private func configureTableView() {

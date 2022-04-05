@@ -24,7 +24,7 @@ class HomeViewController: UIViewController {
         let cardWidth = ( windowWidth - 16 - 32 ) / 2
         
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: cardWidth, height: 300)
+        layout.itemSize = CGSize(width: cardWidth, height: 280)
         layout.minimumInteritemSpacing = 16
         layout.minimumLineSpacing = 16
         layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 0, right: 16)
@@ -51,8 +51,6 @@ class HomeViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        
-        configNavigation()
         
         configCollection()
         
@@ -96,7 +94,7 @@ class HomeViewController: UIViewController {
     private func configNavigation() {
         title = "Heroes"
     }
-    
+
     private func configCollection() {
         view.addSubview(collectionview)
         

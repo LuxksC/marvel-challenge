@@ -15,6 +15,8 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.largeTitleDisplayMode = .never
+        
         view.backgroundColor = .bg
         
         view.addSubview(thumbnailImageView)
@@ -111,6 +113,10 @@ class DetailsViewController: UIViewController {
         
         thumbnailImageView.kf.setImage(with: url)
         nameLabel.text = viewModel.hero.name
-        descriptionLabel.text = viewModel.hero.description == "" ? "This hero has no description" : viewModel.hero.description
+        let defaultText: String = "This hero has no description"
+        descriptionLabel.text = viewModel.hero.description == "" ? defaultText : viewModel.hero.description
+        if descriptionLabel.text == defaultText {
+            descriptionLabel.textAlignment = .center
+        }
     }
 }
