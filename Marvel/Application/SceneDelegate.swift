@@ -14,19 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let navigationController = UINavigationController()
         
-        //---- navigation config ------
-        navigationController.navigationBar.prefersLargeTitles = true
-        
-        navigationController.navigationBar.tintColor = UIColor.navBarTint
-        
-        let appearence = UINavigationBarAppearance()
-        appearence.backgroundColor = UIColor.navBarBackground
-        appearence.titleTextAttributes = [ .foregroundColor: UIColor.navBarTitle, .font: UIFont.navBarTitle ]
-        appearence.largeTitleTextAttributes = [ .foregroundColor: UIColor.navBarTitle, .font: UIFont.navBarLargeTitle]
-        
-        navigationController.navigationBar.standardAppearance = appearence
-        navigationController.navigationBar.scrollEdgeAppearance = appearence
-        //---- navigation config ------
+        configNavigation(navigation: navigationController)
         
         let appCoordinator = AppCoordinator(rootViewController: navigationController)
         
@@ -65,6 +53,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
     
+    private func configNavigation(navigation: UINavigationController) {
+        navigation.navigationBar.prefersLargeTitles = true
+        
+        navigation.navigationBar.tintColor = UIColor.navBarTint
+        
+        let appearence = UINavigationBarAppearance()
+        appearence.backgroundColor = UIColor.navBarBackground
+        appearence.titleTextAttributes = [ .foregroundColor: UIColor.navBarTitle, .font: UIFont.navBarTitle ]
+        appearence.largeTitleTextAttributes = [ .foregroundColor: UIColor.navBarTitle, .font: UIFont.navBarLargeTitle]
+        
+        navigation.navigationBar.standardAppearance = appearence
+        navigation.navigationBar.scrollEdgeAppearance = appearence
+    }
     
 }
 
