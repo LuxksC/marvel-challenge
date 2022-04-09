@@ -13,7 +13,8 @@ O projeto foi criado com fins de estudo, para treinar as habilidades dos contrib
 - [x] Utilizar arquitetura MVVM como base para organização do projeto;
 - [x] Uso de Coordinators para comunição entre ViewControllers;
 - [x] Criação da interface via ViewCode;
-- [x] Utilização do Kingfisher para tratamento das imagens
+- [x] Utilização do Kingfisher para tratamento das imagens;
+- [x] Implementação de um Design System que permitisse controlar as cores do projeto;
 
 ## 📘 Créditos
 Este projeto foi feito em equipe por:
