@@ -1,5 +1,9 @@
 # Marvel Heroes
 
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/86199915/162594269-6359344c-23e3-4399-b4fd-9b8a1355daa9.gif" alt="App Launch Screen" style="width:15em;"/>
+</div>
+
 ## 🎯 Objetivos
 
 O projeto foi criado com fins de estudo, para treinar as habilidades dos contribuidores na linguagem Swift. Ao longo do seu desenvolvimento, os seguintes objetivos foram cumpridos:
