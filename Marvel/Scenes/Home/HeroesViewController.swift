@@ -18,7 +18,6 @@ class HeroesViewController: UIViewController {
     
     private var loading = UIActivityIndicatorView(style: .large)
     
-    // estilização da collection
     lazy var collectionview: UICollectionView = {
         let windowWidth = view.frame.size.width
         let cardWidth = ( windowWidth - 16 - 32 ) / 2

@@ -1,4 +1,5 @@
 import Foundation
+import Alamofire
 
 struct EventsRequest: URLRequestProtocol {
     
@@ -12,11 +13,16 @@ struct EventsRequest: URLRequestProtocol {
         return "\(Environment.baseURL)/\(id)/events"
     }
     
-    var path: String {
+    var path: [String: String] {
         
         let timestamp = NSDate().timeIntervalSince1970.description
         
-        return "ts=\(timestamp)&apikey=\(Environment.publicKey)&hash=\(hashMD5(timestamp: timestamp))"
+        return [
+            "ts": timestamp,
+            "apikey": Environment.publicKey,
+            "hash": hashMD5(timestamp: timestamp)
+        ]
+        
     }
     
     var method: HTTPMethod {

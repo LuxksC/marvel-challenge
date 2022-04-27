@@ -6,5 +6,6 @@ project 'Marvel.xcodeproj'
 target 'Marvel' do
 
   pod 'Kingfisher', '~> 7.0'
+  pod 'Alamofire'
 
 end

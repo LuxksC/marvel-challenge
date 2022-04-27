@@ -13,9 +13,4 @@ enum Environment {
 	static var privateKey: String {
 		return Constants.privateKey
 	}
-	
-//	static var token: String {
-//		return Constants.token
-//	}
-	
 }
