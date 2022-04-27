@@ -8,7 +8,7 @@
 
 O projeto foi criado com fins de estudo, para treinar as habilidades dos contribuidores na linguagem Swift. Ao longo do seu desenvolvimento, os seguintes objetivos foram cumpridos:
 
-- [x] Consumir a API da Marvel para mostrar informações sobre os heróis e os eventos dos quais participaram;
+- [x] Consumir a API da Marvel fazendo uso do [Alamofire](https://github.com/Alamofire/Alamofire);
 - [x] Criar uma CollectionView e TableView dinâmicas, com células personalizáveis;
 - [x] Utilizar arquitetura MVVM como base para organização do projeto;
 - [x] Uso de Coordinators para comunição entre ViewControllers;
